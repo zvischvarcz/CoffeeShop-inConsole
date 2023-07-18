@@ -120,16 +120,15 @@ class Customer{
     }
 
     drinksWanted(shop, drink1, drink2, drink3){
-        // console.log(shop, drink1, drink2, drink3)
         let drinksWantedTotal = shop.drinksOrdered(drink1, drink2, drink3);
         let changeDue = this.totalCash - drinksWantedTotal;
         if (drinksWantedTotal <= this.totalCash){
             if (drink2 == undefined) {
-                return `Thank you ${this.name}, \nYou have ordered a ${drink1}. your total is £${drinksWantedTotal}.\nYou have £${changeDue} remaining.`;
+                return `Thank you ${this.name}, \nYou have ordered a ${drink1}. \nYour total is £${drinksWantedTotal}.\nYou have £${changeDue} remaining.`;
             }else if (drink3 == undefined) {
-                return `Thank you ${this.name}, \nYou have ordered a ${drink1} for ${drinkPrice2} and a ${drink2} for ${drinkPrice2}. your total is £${drinksWantedTotal}.\nYou have £${changeDue} remaining.`;
+                return `Thank you ${this.name}, \nYou have ordered a ${drink1} for ${drinkPrice2} and a ${drink2} for ${drinkPrice2}. \nYour total is £${drinksWantedTotal}.\nYou have £${changeDue} remaining.`;
             } else {
-                return `Thank you ${this.name}, \nYou have ordered a ${drink1} for ${drinkPrice1}, a ${drink2} for ${drinkPrice2} and a ${drink3} for ${drinkPrice3}. your total is £${drinksWantedTotal}.\nYou have £${changeDue} remaining.`;
+                return `Thank you ${this.name}, \nYou have ordered a ${drink1} for ${drinkPrice1}, a ${drink2} for ${drinkPrice2} and a ${drink3} for ${drinkPrice3}. \nYour total is £${drinksWantedTotal}.\nYou have £${changeDue} remaining.`;
             }
         } else {
             return `I am sorry ${this.name}, you can not afford the drinks that you have ordered.`;
@@ -149,7 +148,6 @@ inquirer
     } else {
         chosenShop = CaffeNero;
     }
-
     let caffeNeroAnswers = answers.CaffeNeroMenu
     let costaAnswers = answers.CostaMenu
     let starbucksAnswers = answers.StarbucksMenu
